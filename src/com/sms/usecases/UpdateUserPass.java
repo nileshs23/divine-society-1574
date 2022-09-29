@@ -11,16 +11,15 @@ public class UpdateUserPass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter username:");
 		String username = sc.next();
-		
+
 		Users user = new Users(username);
-		
+
 		UsersDao dao = new UsersDaoImpl();
-		
-		
+
 		try {
 			String msg = dao.updateUserPass(user);
 			System.out.println(msg);
@@ -28,7 +27,7 @@ public class UpdateUserPass {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }
