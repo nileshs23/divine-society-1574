@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.sms.beans.Users;
 import com.sms.dao.UsersDao;
 import com.sms.dao.UsersDaoImpl;
+import com.sms.exceptions.NullUserException;
 import com.sms.exceptions.UserNotFoundException;
 
 public class UpdateUserName {
