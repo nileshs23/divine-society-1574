@@ -6,19 +6,17 @@ public class Students {
     private String firstName;
     private String lastName;
     private String city;
-    private int courseId;
 
     public Students() {
     }
 
-    public Students(int studentId, String firstName, String lastName, String city, int courseId) {
+    public Students(int studentId, String firstName, String lastName, String city) {
         this.studentId = studentId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
-        this.courseId = courseId;
     }
-
+    
     public int getstudentId() {
         return studentId;
     }
@@ -51,13 +49,6 @@ public class Students {
         this.city = city;
     }
 
-    public int getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
-    }
 
 	@Override
 	public String toString() {
@@ -70,8 +61,6 @@ public class Students {
 		builder.append(lastName);
 		builder.append(", city=");
 		builder.append(city);
-		builder.append(", courseId=");
-		builder.append(courseId);
 		builder.append("]");
 		return builder.toString();
 	}

@@ -24,10 +24,7 @@ public class RegisterStudent {
 		System.out.println("Enter Student City:");
 		String city = sc.next();
 		
-		System.out.println("Enter CourseId In which You Have To enroll:");
-		int courseId = sc.nextInt();
-		
-		Students student  = new Students(id, fname, lname, city, courseId);
+		Students student  = new Students(id, fname, lname, city);
 		
 		StudentDao dao = new StudentDaoImpl();
 		

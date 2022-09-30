@@ -1,5 +1,8 @@
 package com.sms.usecases;
 
+import java.util.List;
+
+import com.sms.beans.Students;
 import com.sms.dao.StudentDao;
 import com.sms.dao.StudentDaoImpl;
 
@@ -10,7 +13,10 @@ public class SearchAllStudents {
 
 		StudentDao dao = new StudentDaoImpl();
 		
-		dao.searchAllStudent();
+		List<Students> studs = dao.searchAllStudent();
+		for(Students s:studs) {
+			System.out.println(s);
+		}
 		
 	}
 
