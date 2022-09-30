@@ -1,30 +1,30 @@
 package com.sms.beans;
 
-public class Student {
+public class Students {
 
-    private int studetnId;
+    private int studentId;
     private String firstName;
     private String lastName;
     private String city;
     private int courseId;
 
-    public Student() {
+    public Students() {
     }
 
-    public Student(int studetnId, String firstName, String lastName, String city, int courseId) {
-        this.studetnId = studetnId;
+    public Students(int studentId, String firstName, String lastName, String city, int courseId) {
+        this.studentId = studentId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
         this.courseId = courseId;
     }
 
-    public int getStudetnId() {
-        return studetnId;
+    public int getstudentId() {
+        return studentId;
     }
 
-    public void setStudetnId(int studetnId) {
-        this.studetnId = studetnId;
+    public void setstudentId(int studentId) {
+        this.studentId = studentId;
     }
 
     public String getFirstName() {
@@ -59,10 +59,23 @@ public class Student {
         this.courseId = courseId;
     }
 
-    @Override
-    public String toString() {
-        return "Student [city=" + city + ", courseId=" + courseId + ", firstName=" + firstName + ", lastName="
-                + lastName + ", studetnId=" + studetnId + "]";
-    }
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Students [studentId=");
+		builder.append(studentId);
+		builder.append(", firstName=");
+		builder.append(firstName);
+		builder.append(", lastName=");
+		builder.append(lastName);
+		builder.append(", city=");
+		builder.append(city);
+		builder.append(", courseId=");
+		builder.append(courseId);
+		builder.append("]");
+		return builder.toString();
+	}
+
+    
 
 }
