@@ -19,7 +19,7 @@ public class CourseMenu {
 		
 		boolean userFlag = true;
 		while(userFlag) {
-			System.out.println("....Welcome TO Course Menu....");
+			boxString("Course Menu");
 			System.out.println("1.Add Course");
 			System.out.println("2.Delete Course");
 			System.out.println("3.Update Course Name");
@@ -71,5 +71,30 @@ public class CourseMenu {
 		}
 		
 	}
-
+	
+	public static void boxString(String contents) {
+			
+			int n = contents.length();
+			
+			for(int i=0;i<n+4;i++) {
+				if(i==0 || i == n+3) {
+					System.out.print("+");
+				}else {
+					System.out.print("-");
+				}
+			}
+			System.out.println();
+	
+			System.out.println("| " + contents + " |");
+			
+			for(int i=0;i<n+4;i++) {
+				if(i==0 || i == n+3) {
+					System.out.print("+");
+				}else {
+					System.out.print("-");
+				}
+			}
+			
+			System.out.println();
+	}
 }

@@ -7,6 +7,7 @@ import com.sms.usecases.AddStudent;
 import com.sms.usecases.AddStudentForCourses;
 import com.sms.usecases.RemoveStudent;
 import com.sms.usecases.SearchStudentById;
+import com.sms.usecases.StudentsList;
 import com.sms.usecases.TotalStuInCourse;
 import com.sms.usecases.TotalTables;
 
@@ -22,14 +23,15 @@ int choice=0;
 		
 		boolean userFlag = true;
 		while(userFlag) {
-			System.out.println("....Welcome TO Student Menu....");
+			boxString("Student Menu");
 			System.out.println("1.Add Student");
 			System.out.println("2.Add Student For Course");
 			System.out.println("3.Delete Studentt");
 			System.out.println("4.Search Student");
 			System.out.println("5.Students List");
-			System.out.println("6.Total Student In course");
-			System.out.println("7.Exit");
+			System.out.println("6.Students List With Course");
+			System.out.println("7.Total Student In course");
+			System.out.println("8.Exit");
 			
 			Scanner sc = new Scanner(System.in);
 			choice = sc.nextInt();
@@ -60,18 +62,24 @@ int choice=0;
 				break;
 			}
 			case 5:{
+//				StudentsList list4 = new StudentsList();
+				StudentsList.main(args);
+				System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+				break;
+			}
+			case 6:{
 //				TotalTables list3 = new TotalTables();
 				TotalTables.main(args);
 				System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
 				break;
 			}
-			case 6:{
+			case 7:{
 //				TotalStuInCourse list4 = new TotalStuInCourse();
 				TotalStuInCourse.main(args);
 				System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
 				break;
 			}
-			case 7:{
+			case 8:{
 				userFlag =false;
 				break;
 			}
@@ -80,5 +88,31 @@ int choice=0;
 			}
 		}
 	}
+	
+	public static void boxString(String contents) {
+		
+		int n = contents.length();
+		
+		for(int i=0;i<n+4;i++) {
+			if(i==0 || i == n+3) {
+				System.out.print("+");
+			}else {
+				System.out.print("-");
+			}
+		}
+		System.out.println();
+
+		System.out.println("| " + contents + " |");
+		
+		for(int i=0;i<n+4;i++) {
+			if(i==0 || i == n+3) {
+				System.out.print("+");
+			}else {
+				System.out.print("-");
+			}
+		}
+		
+		System.out.println();
+}
 
 }

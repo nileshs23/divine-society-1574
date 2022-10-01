@@ -19,7 +19,9 @@ public interface StudentDao {
 
     public List<Student_Course> searchAllStudentWithCourse() throws EmptyStudentTableException;
     
-    public List<CountStuds> totalStudentsInCourse(String courseName)  throws EmptyStudentTableException;
+    public List<Students> AllStudents() throws EmptyStudentTableException;
+    
+    public List<CountStuds> totalStudentsInCourse(String courseName)  throws EmptyStudentTableException,CourseNotFoundException;
     
     public String removeStudent(int studentId) throws StudentNotFoundException,CourseNotFoundException;
 
