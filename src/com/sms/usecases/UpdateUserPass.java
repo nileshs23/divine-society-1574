@@ -11,13 +11,13 @@ public class UpdateUserPass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter username:");
+		System.out.print("Enter Username :");
 		String username = sc.next();
-	
-
+		
 		Users user = new Users(username);
 
 		UsersDao dao = new UsersDaoImpl();
