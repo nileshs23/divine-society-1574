@@ -214,7 +214,7 @@ public class StudentDaoImpl implements StudentDao {
 
 	
 	@Override
-	public List<CountStuds> totalStudentsInCourse(String courseName)  throws EmptyStudentTableException{
+	public List<CountStuds> totalStudentsInCourse(String courseName)  throws EmptyStudentTableException,CourseNotFoundException{
 		
 		ArrayList<CountStuds> stuList = new ArrayList<>();
 
@@ -230,12 +230,10 @@ public class StudentDaoImpl implements StudentDao {
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				
 				int totals = rs.getInt(1);
 				int id = rs.getInt(2);
 				String course = rs.getString(3);
 				
-
 				stuList.add(new CountStuds(course, id, totals));
 	
 			}
@@ -248,9 +246,45 @@ public class StudentDaoImpl implements StudentDao {
     	
     	if(stuList.isEmpty())
 			throw new EmptyStudentTableException("No student records to display...");
-
+    	
+    	if(stuList.get(0).getCourseName() == null)
+    		throw new CourseNotFoundException("Given Course Is not valid...");
 		
 		return stuList;
+	}
+
+	
+	@Override
+	public List<Students> AllStudents() throws EmptyStudentTableException {
+		List<Students> students = new ArrayList<>();
+		
+		try (Connection conn = DButil.provideConnection("student_mgmt")){
+			
+			PreparedStatement ps =
+					conn.prepareStatement("SELECT * FROM students");
+			
+			ResultSet rs = ps.executeQuery();
+			
+			boolean flag = false;
+			while(rs.next()) {
+				flag = true;
+				int id = rs.getInt(1);
+				String fname = rs.getString(2);
+				String lname = rs.getString(3);
+				String city = rs.getString(4);
+				
+				students.add( new Students(id, fname, lname, city));
+			}
+			
+			if(flag !=true)
+				throw new EmptyStudentTableException("Student Table is Empty !");
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+		
+		return students;
 	}
 
 }
