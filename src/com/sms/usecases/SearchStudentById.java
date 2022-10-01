@@ -7,7 +7,7 @@ import com.sms.dao.StudentDao;
 import com.sms.dao.StudentDaoImpl;
 import com.sms.exceptions.StudentNotFoundException;
 
-public class GetStudentById {
+public class SearchStudentById {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

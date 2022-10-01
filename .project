@@ -36,19 +36,14 @@
 			<locationURI>PARENT-2-PROJECT_LOC/Code/New%20folder/divine-society-1574/src/com/sms/exceptions/UserNotFoundException.java</locationURI>
 		</link>
 		<link>
-			<name>src/com/sms/usecases/GetUser.java</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Code/New%20folder/divine-society-1574/src/com/sms/usecases/GetUser.java</locationURI>
-		</link>
-		<link>
-			<name>src/com/sms/usecases/RegisterUserUsecase1.java</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Code/New%20folder/divine-society-1574/src/com/sms/usecases/RegisterUserUsecase1.java</locationURI>
-		</link>
-		<link>
-			<name>src/com/sms/usecases/RegisterUserUsecase2.java</name>
+			<name>src/com/sms/usecases/AddUsers.java</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/Code/New%20folder/divine-society-1574/src/com/sms/usecases/RegisterUserUsecase2.java</locationURI>
+		</link>
+		<link>
+			<name>src/com/sms/usecases/ForgotUserDetails.java</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Code/New%20folder/divine-society-1574/src/com/sms/usecases/GetUser.java</locationURI>
 		</link>
 		<link>
 			<name>src/com/sms/utility/DButil.java</name>

@@ -21,13 +21,17 @@ public class UpdateUserName {
 
 		UsersDao dao = new UsersDaoImpl();
 
+		String res;
+		
 		try {
-			String res = dao.updateUserUsername(user);
-			System.out.println(res);
+			res = dao.updateUserUsername(user);
+			
 		} catch (UserNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			res = e.getMessage();
 		}
+		
+		System.out.println(res);
 
 	}
 

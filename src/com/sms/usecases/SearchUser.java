@@ -7,7 +7,7 @@ import com.sms.dao.UsersDao;
 import com.sms.dao.UsersDaoImpl;
 import com.sms.exceptions.UserNotFoundException;
 
-public class GetUser {
+public class SearchUser {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -21,7 +21,7 @@ public class GetUser {
 		UsersDao dao = new UsersDaoImpl();
 		
 		try {
-			Users user = dao.getUser(username);
+			Users user = dao.forgotDetails(username);
 			System.out.println(user);
 		} catch (UserNotFoundException unfe) {
 			// TODO Auto-generated catch block

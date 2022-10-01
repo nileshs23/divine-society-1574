@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.sms.dao.StudentDao;
 import com.sms.dao.StudentDaoImpl;
+import com.sms.exceptions.CourseNotFoundException;
 import com.sms.exceptions.StudentNotFoundException;
 
 public class RemoveStudent {
@@ -20,7 +21,7 @@ public class RemoveStudent {
 		
 		try {
 			System.out.println(dao.removeStudent(id));;
-		} catch (StudentNotFoundException e) {
+		} catch (StudentNotFoundException | CourseNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
