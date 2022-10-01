@@ -8,7 +8,7 @@ import com.sms.dao.StudentDaoImpl;
 import com.sms.exceptions.CourseNotFoundException;
 import com.sms.exceptions.StudentNotFoundException;
 
-public class RegisterStudentForCourses {
+public class AddStudentForCourses {
 	
 	public static void main(String[] args) {
 		

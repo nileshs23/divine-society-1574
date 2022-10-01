@@ -13,20 +13,26 @@ public class UpdateUserPass {
 		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Enter username:");
 		String username = sc.next();
+	
 
 		Users user = new Users(username);
 
 		UsersDao dao = new UsersDaoImpl();
 
+		String res;
+		
 		try {
-			String msg = dao.updateUserPass(user);
-			System.out.println(msg);
+			res = dao.updateUserPass(user);
+			
 		} catch (UserNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			res = e.getMessage();
 		}
+		
+		System.out.println(res);
 
 	}
 

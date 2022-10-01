@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare;
+import com.sms.beans.CountStuds;
+import com.sms.beans.Student_Course;
 import com.sms.beans.Students;
 import com.sms.exceptions.CourseNotFoundException;
 import com.sms.exceptions.EmptyStudentTableException;
@@ -43,23 +45,33 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public List<Students> searchAllStudent() throws EmptyStudentTableException{
+    public List<Student_Course> searchAllStudentWithCourse() throws EmptyStudentTableException{
         // TODO Auto-generated method stub
-    	List<Students> students = new ArrayList<>();
+    	List<Student_Course> stuCourse = new ArrayList<>();
     	
     	try (Connection conn = DButil.provideConnection("student_mgmt")) {
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM students");
+			PreparedStatement ps = 
+					conn.prepareStatement("SELECT s.student_id,s.first_name,s.last_name,s.city,"
+							+ "sc.course_id, "
+							+ "c.courseName,c.courseFee "
+							+ "FROM ((students s "
+							+ "INNER JOIN student_course sc ON s.student_id = sc.student_id) "
+							+ "INNER JOIN course c ON sc.course_id = c.courseID);");
 			
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
 				
-				int id = rs.getInt(1);
-				String fname = rs.getString(2);
-				String lname = rs.getString(3);
-				String city = rs.getString(4);
+				int stu_id = rs.getInt(1);
+				String stu_fname = rs.getString(2);
+				String stu_lname = rs.getString(3);
+				String stu_city = rs.getString(4);
+				int courseId = rs.getInt(5);
+				String courseName = rs.getString(6);
+				int courseFee = rs.getInt(7);
 				
-				students.add(new Students(id, fname, lname, city));
+				
+				stuCourse.add(new Student_Course(stu_id, stu_fname, stu_lname, stu_city,courseId,courseName,courseFee));
 	
 			}
 			
@@ -69,11 +81,11 @@ public class StudentDaoImpl implements StudentDao {
 			throw new EmptyStudentTableException(e.getMessage());
 		}
     	
-    	if(students.isEmpty())
+    	if(stuCourse.isEmpty())
 			throw new EmptyStudentTableException("No student records to display...");
     	
     	
-    	return students;
+    	return stuCourse;
     }
 
 	@Override
@@ -108,8 +120,8 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	@Override
-	public String removeStudent(int studentId) throws StudentNotFoundException {
-		String msg = null;
+	public String removeStudent(int studentId) throws StudentNotFoundException,CourseNotFoundException {
+		String msg = "No Records Found !";
 		
 		try (Connection conn = DButil.provideConnection("student_mgmt")){
 			
@@ -117,14 +129,11 @@ public class StudentDaoImpl implements StudentDao {
 					conn.prepareStatement("DELETE FROM students WHERE student_id=?");
 			
 			ps.setInt(1, studentId);
+			
 			int x = ps.executeUpdate();
 			
-			if(x > 0) {
-				
+			if(x > 0)
 				msg = "Record of "+studentId +" has been deleted !";
-			}else {
-				throw new StudentNotFoundException("No Records Found !");
-			}
 			
 		} catch (SQLException e) {
 			throw new StudentNotFoundException(e.getMessage());
@@ -201,6 +210,47 @@ public class StudentDaoImpl implements StudentDao {
 		
 		
 		return msg;
+	}
+
+	
+	@Override
+	public List<CountStuds> totalStudentsInCourse(String courseName)  throws EmptyStudentTableException{
+		
+		ArrayList<CountStuds> stuList = new ArrayList<>();
+
+    	try (Connection conn = DButil.provideConnection("student_mgmt")) {
+			PreparedStatement ps = 
+					conn.prepareStatement("SELECT COUNT(*),sc.course_id,c.courseName "
+							+ "FROM ((students s INNER JOIN student_course sc ON s.student_id = sc.student_id) "
+							+ "INNER JOIN course c ON sc.course_id = c.courseID  AND c.courseName=?)");
+							
+			
+			ps.setString(1, courseName);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				int totals = rs.getInt(1);
+				int id = rs.getInt(2);
+				String course = rs.getString(3);
+				
+
+				stuList.add(new CountStuds(course, id, totals));
+	
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			throw new EmptyStudentTableException(e.getMessage());
+		}
+    	
+    	if(stuList.isEmpty())
+			throw new EmptyStudentTableException("No student records to display...");
+
+		
+		return stuList;
 	}
 
 }

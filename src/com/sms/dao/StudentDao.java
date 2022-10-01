@@ -2,6 +2,8 @@ package com.sms.dao;
 
 import java.util.List;
 
+import com.sms.beans.CountStuds;
+import com.sms.beans.Student_Course;
 import com.sms.beans.Students;
 import com.sms.exceptions.CourseNotFoundException;
 import com.sms.exceptions.EmptyStudentTableException;
@@ -15,8 +17,20 @@ public interface StudentDao {
     
     public Students searchStudentById(int studentId) throws StudentNotFoundException;
 
-    public List<Students> searchAllStudent() throws EmptyStudentTableException;
+    public List<Student_Course> searchAllStudentWithCourse() throws EmptyStudentTableException;
     
-    public String removeStudent(int studentId) throws StudentNotFoundException;
+    public List<CountStuds> totalStudentsInCourse(String courseName)  throws EmptyStudentTableException;
+    
+    public String removeStudent(int studentId) throws StudentNotFoundException,CourseNotFoundException;
 
+    
 }
+
+//1.add student ~
+//2.addStudentSInCourse --- used nested if else ~
+//3.AllStudents ~
+//4.Remove Student -- added constraints ~
+//5. search by id ~
+//6.UpdateStudentName 
+//7.UpdateStudentFees
+//total students in course  ~
