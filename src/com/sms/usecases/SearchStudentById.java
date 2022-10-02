@@ -23,7 +23,7 @@ public class SearchStudentById {
 			System.out.println(stu);
 		} catch (StudentNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 
 	}

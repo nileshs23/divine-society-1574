@@ -16,58 +16,72 @@ public class UsersMenu {
 		// TODO Auto-generated method stub
 		int choice=0;
 		
-//		System.out.println("....Welcome TO User Menu....");
-//		System.out.println("1.Add User");
-//		System.out.println("2.Delete User");
-//		System.out.println("3.Forgot Password");
-//		System.out.println("4.Forgot UserName");
-//		System.out.println("5.See User's List");
-//		System.out.println("6.Exit");
-		
-		
 		
 		boolean userFlag = true;
 		while(userFlag) {
-			boxString("User Menu");
-			System.out.println("1.Add User");
-			System.out.println("2.Delete User");
-			System.out.println("3.Forgot Password");
-			System.out.println("4.Update UserName");
-			System.out.println("5.See User's List");
-			System.out.println("6.Exit");
+
+			int n = 30;
+			
+			System.out.print((char)27+"[40m");
+			for(int i=0;i<n+4;i++) {
+				if(i==0 || i == n+3) {
+					System.out.print("+");
+				}else {
+					System.out.print("-");
+				}
+			}
+			System.out.println();
+			System.out.println("|	"+"--User Menu--"+"	 	 |");
+			System.out.println("|	"+"1.Add User"+"	 	 |");
+			System.out.println("|	"+"2.Delete User"+"	 	 |");
+			System.out.println("|	"+"3.Forgot Password"+"	 |");
+			System.out.println("|	"+"4.Update UserName"+"	 |");
+			System.out.println("|	"+"5.See User's List"+"	 |");
+			System.out.println("|	"+"6.Exit"+"	 		 |");
+			
+			for(int i=0;i<n+4;i++) {
+				if(i==0 || i == n+3) {
+					System.out.print("+");
+				}else {
+					System.out.print("-");
+				}
+			}
+			
+			System.out.println();
+			System.out.print((char)27+"[0m");
 			
 			Scanner sc = new Scanner(System.in);
 			choice = sc.nextInt();
 			
 			switch (choice) {
 			case 1: {
-				 AddUsers add = new AddUsers();
-				 add.main(args);
-				 System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+//				 AddUsers add = new AddUsers();
+				 AddUsers.main(args);
+				 System.out.println();
 				break;
 			}
 			case 2:{
-				RemoveUser remove = new RemoveUser();
-				remove.main(args);
-				System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+//				RemoveUser remove = new RemoveUser();
+				RemoveUser.main(args);
+				System.out.println();
 				break;
 			}
 			case 3:{
-				UpdateUserPass pass = new UpdateUserPass();
-				pass.main(args);
-				System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+//				UpdateUserPass pass = new UpdateUserPass();
+				UpdateUserPass.main(args);
+				System.out.println();
 				break;
 			}
 			case 4:{
-				UpdateUserName name = new UpdateUserName();
-				name.main(args);
-				System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+//				UpdateUserName name = new UpdateUserName();
+				UpdateUserName.main(args);
+				System.out.println();
 				break;
 			}
 			case 5:{
-				UsersList list1 = new UsersList();
-				list1.main(args);
-				System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+//				UsersList list1 = new UsersList();
+				UsersList.main(args);
+				System.out.println();
 				break;
 			}
 			case 6:{

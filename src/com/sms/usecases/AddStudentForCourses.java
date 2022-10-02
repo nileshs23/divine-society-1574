@@ -27,7 +27,7 @@ public class AddStudentForCourses {
 			System.out.println(res);
 		} catch (StudentNotFoundException | CourseNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 				
 		
