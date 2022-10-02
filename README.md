@@ -54,9 +54,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is console based project. Java and SQL are used as primary to perform certain actions. Here As seen Below in screenshots you can perform various operation on he database using java only. 
+This is console based project. Java and SQL are used as primary programming lanquage to perform certain actions. Here As seen Below in screenshots you can perform various operation on he database using java only. 
 
-Try `Link in Description` forking the project and  help me to grow.
+Try `forking`  the project and  help me to grow.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,7 +66,7 @@ Try `Link in Description` forking the project and  help me to grow.
 
 Tech Stack :
 
-[![My Skills](https://skillicons.dev/icons?i=java,sql,github,git,vscode&theme=light)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=java,mysql,github,git,vscode&theme=light)](https://skillicons.dev)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -106,9 +106,9 @@ Make sure you have all the prequisite installed correctly.No need of installatio
    ```sh
    git clone https://github.com/nileshs23/divine-society-1574
    ```
-2.  Set the path to MENU in menu packages.
+2.  Select .java in the path to MENU packages.
    ```sh
-  COM --> SMS --> MENU
+  COM --> SMS --> MENU --> main.java
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -120,17 +120,17 @@ Make sure you have all the prequisite installed correctly.No need of installatio
 
 Use this to get insights of my project.
 
-Main Menu :-
+* Main Menu :-
 ![Screenshot (303)](https://user-images.githubusercontent.com/53571060/193453834-d053c33d-2327-43e0-a08b-73db0d12e883.png)
 
 
-Main Menu with User Menu (with Functions)
+* Main Menu with User Menu (with Functions)
 ![Screenshot (304)](https://user-images.githubusercontent.com/53571060/193453860-2b35ac32-336a-4419-aa13-816a19509fd7.png)
 
-Main Menu with Course Menu  (with Functions)
+* Main Menu with Course Menu  (with Functions)
 ![Screenshot (305)](https://user-images.githubusercontent.com/53571060/193453877-22c3f87e-f893-454c-a413-50445d0dab52.png)
 
-Students Menu and  Its Functions
+* Students Menu and  Its Functions
 ![Screenshot (306)](https://user-images.githubusercontent.com/53571060/193453881-d3cdb0dd-fd17-43f2-a4ae-68e3ecdebc55.png)
 
 
@@ -187,11 +187,11 @@ Don't forget to give the project a star! Thanks again!
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-I would like to give credit to my IA Mohit Agarwal for Helping to make this project. I've included a few of my favorites to kick things off!
+I would like to give credit to my IA Mohit Agarwal for Helping to make this project. !
 
 * Masai School
 * ALL INSTRUCTORS.
 
-Thank You...!
+Thank You...For Giving this wonderful project idea !
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
