@@ -33,16 +33,24 @@ public class StudentsList {
 						,student.getCity());
 			}
 			
+			for(int i=0;i<4*16;i++) {
+				if(i==0 || i == 4*16-1) {
+					System.out.print("+");
+				}else {
+					System.out.print("-");
+				}
+			}
+			
 		}catch (Exception e) {
 			// TODO: handle exception\
-			e.getMessage();
+			System.out.println(e.getMessage());
 		}
 		
 	}
 	
-public static void boxString2(int content1,String content2,String content3,String content4) {
+	public static void boxString2(int content1,String content2,String content3,String content4) {
 		
-		int n =15;
+		int n =16;
 		for(int i=0;i<4*n;i++) {
 			if(i==0 || i == 4*n-1) {
 				System.out.print("+");
@@ -62,28 +70,23 @@ public static void boxString2(int content1,String content2,String content3,Strin
 				System.out.print("|");
 			}else if(i< n/6 && i>0 && p1flag){
 				p1flag = false;
-				System.out.print("	"+content1+"	");
+				System.out.print("	"+content1+"	|");
 			}else if(i>2*n/6 && i < 4*n && p2flag) {
 				p2flag = false;
-				System.out.print("	"+content2+"	");
+				System.out.print("	"+content2+"	|");
 			}else if(i>3*n/6 && i < 4*n && p3flag) {
 				p3flag = false;
-				System.out.print("	"+content3+"	");
+				System.out.print("	"+content3+"	|");
 			}else if(i>4*n/6 && i < 4*n && p4flag) {
 				p4flag = false;
-				System.out.print("	"+content4+"	");
+				System.out.print("	"+content4+"	|");
 			}
 		}
 		System.out.println();
 		
-		for(int i=0;i<4*n;i++) {
-			if(i==0 || i == 4*n-1) {
-				System.out.print("+");
-			}else {
-				System.out.print("-");
-			}
-		}
-		System.out.println();
+		
+//		System.out.println();
 	}
+	
 
 }

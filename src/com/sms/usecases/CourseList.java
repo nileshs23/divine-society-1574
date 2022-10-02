@@ -18,15 +18,93 @@ public class CourseList {
 		
 		try {
 			cL = dao.searchAllCourses();
-			
+			boxString1("ID", "CourseName", "Fees");
 			for(Courses c:cL) {
-				System.out.println(c);
+				boxString2(c.getCourseId(),
+						c.getCourseName(),
+						c.getcourseFees());
 			}
+			
+			for(int i=0;i<4*13;i++) {
+				if(i==0 || i == 4*13-1) {
+					System.out.print("+");
+				}else {
+					System.out.print("-");
+				}
+			}
+			
+			System.out.println();
 		} catch (EmptyCourseException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		
+	}
+	
+public static void boxString1(String content1,String content2,String content3) {
+		
+		int n =13;
+		for(int i=0;i<4*n;i++) {
+			if(i==0 || i == 4*n-1) {
+				System.out.print("+");
+			}else {
+				System.out.print("-");
+			}
+		}
+		System.out.println();
+
+		boolean p1flag = true;
+		boolean p2flag = true;
+		boolean p3flag = true;
+		
+		for(int i=0;i<4*n;i++) {
+			if(i==0) {
+				System.out.print("|");
+			}else if(i< n/6 && i>0 && p1flag){
+				p1flag = false;
+				System.out.print("	"+content1);
+			}else if(i>2*n/6 && i < 4*n && p2flag) {
+				p2flag = false;
+				System.out.print("	"+content2);
+			}else if(i>3*n/6 && i < 4*n && p3flag) {
+				p3flag = false;
+				System.out.print("	"+content3);
+			}
+		}
+		System.out.println();
+	}
+	
+	public static void boxString2(int content1,String content2,int content3) {
+		
+		int n =13;
+		for(int i=0;i<4*n;i++) {
+			if(i==0 || i == 4*n-1) {
+				System.out.print("+");
+			}else {
+				System.out.print("-");
+			}
+		}
+		System.out.println();
+
+		boolean p1flag = true;
+		boolean p2flag = true;
+		boolean p3flag = true;
+		
+		for(int i=0;i<4*n;i++) {
+			if(i==0) {
+				System.out.print("|");
+			}else if(i< n/6 && i>0 && p1flag){
+				p1flag = false;
+				System.out.print("	"+content1);
+			}else if(i>2*n/6 && i < 4*n && p2flag) {
+				p2flag = false;
+				System.out.print("	"+content2);
+			}else if(i>3*n/6 && i < 4*n && p3flag) {
+				p3flag = false;
+				System.out.print("	"+content3);
+			}
+		}
+		System.out.println();
 	}
 
 }

@@ -23,7 +23,7 @@ public class RemoveStudent {
 			System.out.println(dao.removeStudent(id));;
 		} catch (StudentNotFoundException | CourseNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 
 	}
