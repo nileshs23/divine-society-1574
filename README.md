@@ -11,7 +11,7 @@
 
 
 
-  <h3 align="center">Memory.ai Clone</h3>
+  <h3 align="center">Student Registration System</h3>
 
   <p align="center">
   Automated Student Registration System !
